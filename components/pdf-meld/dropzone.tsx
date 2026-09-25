@@ -75,12 +75,14 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
           </p>
         )}
       </div>
+      {/* 🌟 ACCESSIBILITY FIX: aria-label="Upload PDF files" əlavə edildi */}
       <input
         ref={inputRef}
         type="file"
         accept="application/pdf,.pdf"
         multiple
         className="sr-only"
+        aria-label="Upload PDF files"
         onChange={(e) => {
           handleFiles(e.target.files)
           e.target.value = ''
